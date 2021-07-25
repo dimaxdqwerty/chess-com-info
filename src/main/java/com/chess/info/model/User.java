@@ -11,6 +11,9 @@ public class User {
     private String url;
     private String username;
     private String status;
+
+    //optional
+    private String name;
     //optional
     private String avatar;
     //optional
@@ -85,6 +88,10 @@ public class User {
         return fide;
     }
 
+    public String getName() {
+        return name;
+    }
+
     public void setAvatar(String avatar) {
         this.avatar = avatar;
     }
@@ -99,5 +106,9 @@ public class User {
 
     public void setFide(int fide) {
         this.fide = fide;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

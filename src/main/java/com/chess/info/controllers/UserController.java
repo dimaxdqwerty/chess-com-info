@@ -56,6 +56,12 @@ public class UserController {
             //logger will be here someday
             e.printStackTrace();
         }
+        try {
+            user.setName(jsonUser.getObject().getString(Constants.NAME));
+        } catch (JSONException e) {
+            //logger will be here someday
+            e.printStackTrace();
+        }
         model.addAttribute("user", user);
         return "user_info";
     }

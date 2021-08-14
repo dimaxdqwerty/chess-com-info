@@ -1,12 +1,16 @@
 package com.chess.info.model;
 
+import java.sql.Time;
+import java.sql.Timestamp;
+import java.util.Date;
+
 public class User {
 
     private Country country;
     private Long player_id;
     private int followers;
-    private long joined;
-    private long last_online;
+    private Date joined;
+    private Date last_online;
     private boolean is_streamer;
     private String url;
     private String username;
@@ -28,8 +32,8 @@ public class User {
         this.country = country;
         this.player_id = player_id;
         this.followers = followers;
-        this.joined = joined;
-        this.last_online = last_online;
+        this.joined = new Date(new Timestamp(joined*1000).getTime());
+        this.last_online = new Date(new Timestamp(last_online*1000).getTime());
         this.is_streamer = is_streamer;
         this.url = url;
         this.username = username;
@@ -48,11 +52,11 @@ public class User {
         return followers;
     }
 
-    public long getJoined() {
+    public Date getJoined() {
         return joined;
     }
 
-    public long getLast_online() {
+    public Date getLast_online() {
         return last_online;
     }
 

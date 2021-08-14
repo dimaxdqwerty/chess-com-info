@@ -41,7 +41,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <img th:if="${user.avatar == null}" th:src="@{/resources/img/no-image.gif}" />
+                <img  th:if="${user.avatar == null}" th:src="@{/resources/img/no-image.gif}" />
                 <img th:unless="${user.avatar == null}" th:src="${user.avatar}" />
             </div>
             <div class="col-md-6">
@@ -50,12 +50,19 @@
         </div>
     </div>
 </div>
-<ul>
+<ul id="content">
     <li style="font-size: 20px" th:inline="text">Real name: [[${user.name}]]</li>
-    <li style="font-size: 20px">Item 2</li>
-    <li style="font-size: 20px">Item 3</li>
-    <li style="font-size: 20px">Item 4</li>
+    <li style="font-size: 20px" th:inline="text">Title: [[${user.title}]]</li>
+    <li style="font-size: 20px" th:inline="text">Country: [[${user.country.name}]]</li>
+    <li style="font-size: 20px" th:inline="text">Followers: [[${user.followers}]]</li>
+    <!--- to normal format -->
+    <li style="font-size: 20px" th:inline="text">Joined: [[${user.joined}]]</li>
+    <!--- to format such as "N days ago" -->
+    <li style="font-size: 20px" th:inline="text">Last online: [[${user.last_online}]]</li>
+    <li style="font-size: 20px" th:inline="text">Account status: [[${user.status}]]</li>
+    <li style="font-size: 20px" th:inline="text">Is streamer: [[${user.is_streamer}]]</li>
 </ul>
+
 </body>
 
 </html>

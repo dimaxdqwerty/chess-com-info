@@ -41,12 +41,12 @@ public class UserController {
         try {
             user.setFide(jsonUser.getObject().getInt(Constants.FIDE));
         } catch (JSONException e) {
-            //logger will be here someday
             e.printStackTrace();
         }
         try {
             user.setTitle(jsonUser.getObject().getString(Constants.TITLE));
         } catch (JSONException e) {
+            user.setTitle(Constants.NO_TITLE_MESSAGE);
             //logger will be here someday
             e.printStackTrace();
         }
@@ -59,6 +59,7 @@ public class UserController {
         try {
             user.setName(jsonUser.getObject().getString(Constants.NAME));
         } catch (JSONException e) {
+            user.setName(Constants.NO_REAL_NAME_MESSAGE);
             //logger will be here someday
             e.printStackTrace();
         }

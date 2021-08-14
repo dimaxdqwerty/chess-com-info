@@ -21,4 +21,7 @@ public class Constants {
     public static final String TITLE = "title";
     public static final String TWITCH_URL = "twitch_url";
 
+    public static final String NO_TITLE_MESSAGE = "no title";
+    public static final String NO_REAL_NAME_MESSAGE = "no real name";
+
 }
